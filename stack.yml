@@ -1,0 +1,17 @@
+provider:
+  name: faas
+  gateway: http://localhost:8080
+  network: func_functions
+
+functions:
+  tweetstargazer:
+    lang: python
+    handler: ./tweet-stargazer
+    image: alexellis2/tweet-stargazer
+    environment_file:
+     - twitter_secrets.yml
+
+  tweetfanclub:
+    lang: python
+    handler: ./tweet-fanclub
+    image: alexellis2/tweet-fanclub
