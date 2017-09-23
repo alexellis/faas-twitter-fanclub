@@ -1,9 +1,0 @@
-provider:
-  name: faas
-  gateway: http://localhost:8080
-
-functions:
-  tweet-fanclub:
-    lang: python
-    handler: ./tweet-fanclub
-    image: tweet-fanclub
