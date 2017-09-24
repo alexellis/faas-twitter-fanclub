@@ -15,6 +15,8 @@ functions:
     lang: python
     handler: ./tweet-fanclub
     image: alexellis2/tweet-fanclub
+    environment:
+      cache-minutes: 60
 
   tweetpolaroid:
     skip_build: true
