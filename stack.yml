@@ -15,3 +15,8 @@ functions:
     lang: python
     handler: ./tweet-fanclub
     image: alexellis2/tweet-fanclub
+
+  tweetpolaroid:
+    skip_build: true
+    image: alexellis2/faas-polaroid:0.1
+

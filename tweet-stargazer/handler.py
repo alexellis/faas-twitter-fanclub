@@ -12,10 +12,13 @@ def handle(st):
     api = tweepy.API(auth)
 
     file_name = req["filename"]
-    
-    r = requests.get("http://minio-shim:8080/get/"+file_name)
+
+    r = requests.get("http://minio-shim:8080/get/" + file_name)
+
+    polaroid_r = requests.post("http://gateway:8080/function/tweetpolaroid", r.content)
+
     f = open("/tmp/"+file_name, 'wb')
-    f.write(r.content)
+    f.write(polaroid_r.content)
     f.close()
 
     api.update_with_media("/tmp/"+file_name, req["login"] + " is a star-gazer for OpenFaaS")
